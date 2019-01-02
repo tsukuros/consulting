@@ -2,11 +2,14 @@
 # https://middlemanapp.com/advanced/configuration/#configuring-extensions
 
 set :name, 'Oleks Consulting'
+set :company_name, 'Oleks Consulting LLC'
+set :company_email, 'Oleks@OleksConsulting.com'
 
 activate :autoprefixer do |prefix|
   prefix.browsers = "last 2 versions"
 end
 activate :livereload
+activate :directory_indexes
 
 # Layouts
 # https://middlemanapp.com/basics/layouts/

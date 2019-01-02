@@ -1,20 +1,20 @@
-<footer class="navbar d-none">
+<footer class="navbar">
   <nav class="container">
     <div class="d-flex w-100">
       <div class="flex-grow-1">
         <p class="mb-3">&copy; <%= Time.now.strftime('%Y') %> OleksConsulting.com</p>
-        <a href="/policy" class="btn btn-link">Privacy Policy</a>
-        <a href="/terms" class="btn btn-link">Terms</a>
+        <a href="/privacy-policy" class="btn btn-link text-body">Privacy Policy</a>
+        <a href="/terms" class="btn btn-link text-body">Terms</a>
       </div>
       <ul class="d-flex list-unstyled">
-        <li class="nav-item">
-          <a class="nav-link" href="/about">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/contact">Contact</a>
+        <li class="nav-item d-none">
+          <a class="nav-link text-body" href="/about">About</a>
         </li>
         <li class="nav-item d-none">
-          <a class="nav-link" href="/blog">Blog</a>
+          <a class="nav-link text-body" href="/contact">Contact</a>
+        </li>
+        <li class="nav-item d-none">
+          <a class="nav-link text-body" href="/blog">Blog</a>
         </li>
       </ul>
     </div>
