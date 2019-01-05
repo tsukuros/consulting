@@ -1,0 +1,4 @@
+User-Agent: *
+Disallow:
+
+Sitemap: https://oleksconsulting.com/sitemap.xml
