@@ -1,0 +1,15 @@
+---
+layout: false
+---
+<% pages = sitemap.resources.reject{|r| r.is_a? Middleman::Sitemap::Extensions::RedirectResource }.find_all{|p| p.source_file.match(/\.html/) && !p.data.sitemap_noindex == true } %>
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<% pages.each do |p| %>
+  <url>
+    <loc><%= config[:host] + p.url.gsub('/index.html','')%></loc>
+    <lastmod><%= p.data.lastmod || Time.now.strftime('%F') %></lastmod>
+    <changefreq><%= p.data.changefreq || 'monthly' %></changefreq>
+    <priority><%= p.data.priority || 1.0 %></priority>
+  </url>
+<% end %>
+</urlset>

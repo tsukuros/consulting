@@ -48,6 +48,7 @@ page '/*.txt', layout: false
 
 
 configure :build do
+  config[:host] = 'https://oleksconsulting.com'
   activate :minify_css
   activate :minify_javascript
   activate :asset_hash
