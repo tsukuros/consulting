@@ -1,0 +1,26 @@
+---
+posts:
+  - title: '3 tips on how to optimize your SaaS sales funnel'
+    date: 'January 10th, 2019'
+    image_path: 'blog/sales-funnel.jpg'
+    description: 'Simply having a sales funnel in place is not enough. You need to identify the data points along the funnel that you will use to measure success for better conversions. Above all, those data points need to make sense for you and your team.'
+    link: '/blog/post-1'
+  - title: 'Another 3 tips on how to optimize your SaaS sales funnel'
+    date: 'January 13th, 2019'
+    image_path: 'blog/post-sale-revenue-projections.png'
+    description: 'Optimising a SaaS sales funnel for efficiency starts by looking at your funnel and asking: where does it get narrow really fast? Visualise it by looking at your different data points at each identified stage.'
+    link: '/blog/post-2'
+---
+<main class="container py-5 mt-5" style="max-width: 700px;">
+  <% current_page.data.posts.each do |post| %>
+    <div class="pb-5 mb-5 border-bottom">
+      <h2 class="h3">
+        <a href="<%= post[:link] %>"><%= post[:title] %></a>
+      </h2>
+      <p class="text-muted mb-4">Written by Oleks Tsukur on <%= post[:date] %></p>
+      <%= image_tag post[:image_path], class: 'img-fluid d-block mx-auto mb-3' %>
+      <p><%= post[:description] %></p>
+      <a href="<%= post[:link] %>" class="btn btn-secondary">Read More</a>
+    </div>
+  <% end %>
+</main>

@@ -6,9 +6,7 @@
         <a href="/privacy-policy" class="btn btn-link text-body">Privacy Policy</a>
         <a href="/terms" class="btn btn-link text-body">Terms</a>
         <a href="/earnings-disclaimer" class="btn btn-link text-body">Earnings Disclaimer</a>
-        <% if !current_page.data.facebook_disclaimer.nil? && current_page.data.facebook_disclaimer %>
-          <p class="facebook-disclaimer mt-3">This website is not a part of Facebook or Facebook Inc.<br />Additionally, this site is NOT endorsed by Facebook in any way.<br />FACEBOOK is a trademark of FACEBOOK Inc.</p>
-        <% end %>
+        <p class="facebook-disclaimer mt-3 small">This website is not a part of Facebook or Facebook Inc.<br />Additionally, this site is NOT endorsed by Facebook in any way.<br />FACEBOOK is a trademark of FACEBOOK Inc.</p>
       </div>
       <ul class="d-flex list-unstyled">
         <li class="nav-item">
@@ -17,7 +15,7 @@
         <li class="nav-item">
           <a class="nav-link text-body" href="/contact">Contact</a>
         </li>
-        <li class="nav-item d-none">
+        <li class="nav-item">
           <a class="nav-link text-body" href="/blog">Blog</a>
         </li>
       </ul>
