@@ -4,11 +4,8 @@ private_application: true
 
 <main id="content" class="container d-flex py-5" style="min-height: calc(100vh - 104px - 56px)">
   <div class="row my-auto flex-grow-1">
-    <div class="col-lg-5 offset-lg-1 mb-4">
-      <%= image_tag 'home/look-right.png', class: 'img-fluid d-block mx-auto', alt: "Oleks Tsukur Avatar" %>
-    </div>
-    <div class="col-lg-5 d-flex align-items-center mb-4">
-      <div class="text-center text-lg-left mx-auto ml-lg-0 mb-4" style="max-width: 474px;">
+    <div class="col-lg-5 offset-lg-1 d-flex align-items-center mb-4">
+      <div class="mx-auto ml-lg-0 mb-4" style="max-width: 474px;">
 
         Thanks for scheduling your breakthrough strategy session<br />
         <br />
@@ -23,6 +20,9 @@ private_application: true
         <br />
         - Oleks
       </div>
+    </div>
+    <div class="col-lg-5 mb-4 d-lg-block d-none">
+      <%= image_tag 'home/avatar-300px.jpg', class: 'img-fluid d-block mx-auto rounded', alt: "Oleks Tsukur Avatar", style: 'max-width: 200px;' %>
     </div>
   </div>
 </main>
