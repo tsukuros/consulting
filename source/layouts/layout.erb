@@ -14,7 +14,11 @@
     <%= javascript_include_tag "site" %>
   </head>
   <body>
-    <%= partial 'partials/header' %>
+    <% if !current_page.data.private_application.nil? && current_page.data.private_application %>
+      <%= partial 'partials/header_private' %>
+    <% else %>
+      <%= partial 'partials/header' %>
+    <% end %>
     <%= yield %>
     <%= partial 'partials/footer' %>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

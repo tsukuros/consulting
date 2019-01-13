@@ -8,17 +8,20 @@
         <a href="/earnings-disclaimer" class="btn btn-link text-body">Earnings Disclaimer</a>
         <p class="facebook-disclaimer mt-3 small">This website is not a part of Facebook or Facebook Inc.<br />Additionally, this site is NOT endorsed by Facebook in any way.<br />FACEBOOK is a trademark of FACEBOOK Inc.</p>
       </div>
-      <ul class="d-flex list-unstyled">
-        <li class="nav-item">
-          <a class="nav-link text-body" href="/about">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-body" href="/contact">Contact</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-body" href="/blog">Blog</a>
-        </li>
-      </ul>
+      <% if !current_page.data.private_application.nil? && current_page.data.private_application %>
+      <% else %>
+        <ul class="d-flex list-unstyled">
+          <li class="nav-item">
+            <a class="nav-link text-body" href="/about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-body" href="/contact">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-body" href="/blog">Blog</a>
+          </li>
+        </ul>
+      <% end %>
     </div>
   </nav>
 </footer>
