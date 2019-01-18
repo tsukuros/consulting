@@ -47,35 +47,62 @@ setTimeout(ldinsp, 0);
     <span class="navbar-brand text-uppercase d-block mr-auto">OLEKS CONSULTING</span>
 
     <span class="text-uppercase text-white font-weight-light">
-      PRIVATE APPLICATION
+      PRIVATE VIDEO
     </span>
   </div>
 </nav>
 
-    <main id="content" class="container d-flex py-5" style="min-height: calc(100vh - 104px - 56px)">
-  <div class="row my-auto flex-grow-1">
-    <div class="col-lg-5 offset-lg-1 d-flex align-items-center mb-4">
-      <div class="mx-auto ml-lg-0 mb-4" style="max-width: 474px;">
+    <main id="content" class="container py-5 my-5" style="min-height: calc(100vh - 104px - 56px); max-width: 810px;">
+  <div id="video-not-found-container" class="d-none text-center">
+    <h2 class="my-5 py-4">
+      Sorry, your video is not found
+    </h2>
+    <a href="/" class="btn btn-primary">Visit Home</a>
+  </div>
+  <div id="video-found-container" class="d-none">
+    <h1 class="text-center mb-5 pb-4">
+      <span id="company-name"></span>
+      - Here's Some Critical Mistakes That You're Making With Your Digital Marketing
+    </h1>
 
-        Thanks for scheduling your breakthrough strategy session<br />
-        <br />
-        I have sent you confirmation of your calls time and date via email, please make sure that you put this in your calendar right now<br />
-        <br />
-        I will call you via Skype or Phone (depending on what you selected in the survey) at the precise time that you selected, please make sure that you are ready when they call. If you are more than 5mins late the call will be cancelled and you will not be able to reschedule another one<br />
-        <br />
-        Please make sure that you are in a quiet room and do not take the call from your car, airport or any other noisy place. If you take the call in a noisy location we will cancel the call with you and not allow you to reschedule another one<br />
-        <br />
-        I look forward to helping you explode your business and achieve massive success!<br />
-        <br />
-        <br />
-        - Oleks
-      </div>
+    <div class="lead alert alert-secondary mb-4">
+      Step One:  Watch this video review I made for you
     </div>
-    <div class="col-lg-5 mb-4 d-lg-block d-none">
-      <img src="../images/home/avatar-300px-147e1df1.jpg" class="img-fluid d-block mx-auto rounded" alt="Oleks Tsukur Avatar" style="max-width: 200px;" />
+
+    <div class="embed-responsive embed-responsive-16by9 mb-5">
+      <iframe id="video" class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe>
     </div>
+
+    <div class="lead alert alert-secondary mb-4">
+      Step Two:  Schedule a free consultation to discuss how we can help
+    </div>
+
+    <p class="lead mb-5">
+      How would you like to fix this problem and take advantage of other low hanging fruit opportunities that everybody else in your marketplace is missing?<br />
+      <br />
+      Schedule a free, no obligation strategy session with me personally and I will walk you through a clear plan of action for solving these critical issues and growing your business exponentially.
+    </p>
+
+    <a href="https://calendly.com/oleksconsulting/45-min-strategy-session" class="btn btn-lg btn-primary px-5 py-3">Schedule Your Free Strategy Session</a>
   </div>
 </main>
+
+<script>
+  var companyName = document.getElementById('company-name');
+  var video = document.getElementById('video');
+  var videoNotFoundContainer = document.getElementById('video-not-found-container');
+  var videoFoundContainer = document.getElementById('video-found-container');
+  var videos = {"sylviaelectrical":{"company_name":"Sylvia Electrical","email":"help@sylviaelectrical.com","video_url":"https://www.youtube.com/embed/zpOULjyy-n8?rel=0"}};
+  var company_key = window.location.search.split('?for=')[1];
+  var currentVideo = videos[company_key];
+  if (currentVideo) {
+    companyName.innerHTML = currentVideo.company_name;
+    video.src = currentVideo.video_url;
+    videoFoundContainer.classList.remove('d-none');
+  } else {
+    videoNotFoundContainer.classList.remove('d-none');
+  }
+</script>
 
     <footer class="navbar">
   <nav class="container">
