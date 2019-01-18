@@ -1,0 +1,60 @@
+---
+header_text: 'PRIVATE VIDEO'
+videos:
+  sylviaelectrical:
+    company_name: 'Sylvia Electrical'
+    email: 'help@sylviaelectrical.com'
+    video_url: 'https://www.youtube.com/embed/zpOULjyy-n8?rel=0'
+---
+
+<main id="content" class="container py-5 my-5" style="min-height: calc(100vh - 104px - 56px); max-width: 810px;">
+  <div id="video-not-found-container" class="d-none text-center">
+    <h2 class="my-5 py-4">
+      Sorry, your video is not found
+    </h2>
+    <a href="/" class="btn btn-primary">Visit Home</a>
+  </div>
+  <div id="video-found-container" class="d-none">
+    <h1 class="text-center mb-5 pb-4">
+      <span id="company-name"></span>
+      - Here's Some Critical Mistakes That You're Making With Your Digital Marketing
+    </h1>
+
+    <div class="lead alert alert-secondary mb-4">
+      Step One:  Watch this video review I made for you
+    </div>
+
+    <div class="embed-responsive embed-responsive-16by9 mb-5">
+      <iframe id="video" class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe>
+    </div>
+
+    <div class="lead alert alert-secondary mb-4">
+      Step Two:  Schedule a free consultation to discuss how we can help
+    </div>
+
+    <p class="lead mb-5">
+      How would you like to fix this problem and take advantage of other low hanging fruit opportunities that everybody else in your marketplace is missing?<br />
+      <br />
+      Schedule a free, no obligation strategy session with me personally and I will walk you through a clear plan of action for solving these critical issues and growing your business exponentially.
+    </p>
+
+    <a href="https://calendly.com/oleksconsulting/45-min-strategy-session" class="btn btn-lg btn-primary px-5 py-3">Schedule Your Free Strategy Session</a>
+  </div>
+</main>
+
+<script>
+  var companyName = document.getElementById('company-name');
+  var video = document.getElementById('video');
+  var videoNotFoundContainer = document.getElementById('video-not-found-container');
+  var videoFoundContainer = document.getElementById('video-found-container');
+  var videos = <%= current_page.data.videos.to_json %>;
+  var company_key = window.location.search.split('?for=')[1];
+  var currentVideo = videos[company_key];
+  if (currentVideo) {
+    companyName.innerHTML = currentVideo.company_name;
+    video.src = currentVideo.video_url;
+    videoFoundContainer.classList.remove('d-none');
+  } else {
+    videoNotFoundContainer.classList.remove('d-none');
+  }
+</script>

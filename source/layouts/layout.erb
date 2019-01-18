@@ -11,19 +11,19 @@
     <%= partial 'partials/favicon' %>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <%= stylesheet_link_tag "site" %>
-    <%= javascript_include_tag "site" %>
+    <%= partial 'partials/inspectlet' %>
   </head>
-  <body>
-    <% if !current_page.data.private_application.nil? && current_page.data.private_application %>
-      <%= partial 'partials/header_private' %>
+  <body class="<%= yield_content :body_class %>">
+    <% if !current_page.data.header_text.nil? %>
+      <%= partial 'partials/header_private', locals: {
+        header_text: current_page.data.header_text
+      } %>
     <% else %>
       <%= partial 'partials/header' %>
     <% end %>
     <%= yield %>
     <%= partial 'partials/footer' %>
-    <%= partial 'partials/inspectlet' %>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
     <%= partial 'partials/ga' %>
+    <%= javascript_include_tag "site" %>
   </body>
 </html>
